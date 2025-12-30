@@ -30,17 +30,13 @@
              } else if(pc == 3 ){
                 alert("El pc eligio ✂")
             }
-            // combate        
-            if (pc == jugador){
+            // combate   
+            if (jugador == pc){
                 alert("empate")
-            } else if(jugador == 1 && pc ==3){
-                alert("ganaste")
-            } else if(jugador ==2 && pc == 1 ){
-                alert("ganaste")
-            }else if(jugador ==3 && pc == 2 ){
-                alert("ganaste")
-            } else {
-                alert("perdiste")
+            }  else if((jugador == 1 && pc == 3) || (jugador == 3 && pc == 2) || (jugador == 3 && pc == 2)) {
+                alert("ganaste eeee")
+            }   else {
+                alert("perdiste bro")
             }
         </script>
     </head>
