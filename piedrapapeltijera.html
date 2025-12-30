@@ -10,13 +10,32 @@
             jugador = prompt("elige: 1 para piedra, 2 para papel y 3 para tijera")
           //  alert("Elegiste " + jugador )
             if(jugador == 1 ){
-                alert("Elegiste piedra")
+                alert("Elegiste 🥌")
             } else if(jugador == 2 ){
-                alert("Elegiste papel")
+                alert("Elegiste 🧻")
              } else if(jugador == 3 ){
-                alert("Elegiste tijera")
+                alert("Elegiste ✂")
             } else {
                 alert("Elegiste perder")
+            }
+            if(pc == 1 ){
+                alert("El pc eligio 🥌")
+            } else if(pc == 2 ){
+                alert("El pc eligio 🧻")
+             } else if(pc == 3 ){
+                alert("El pc eligio ✂")
+            }
+            // combate
+            if (pc == jugador){
+                alert("empate")
+            } else if(jugador == 1 && pc ==3){
+                alert("ganaste")
+            } else if(jugador ==2 && pc == 1 ){
+                alert("ganaste")
+            }else if(jugador ==3 && pc == 2 ){
+                alert("ganaste")
+            } else {
+                alert("perdiste")
             }
         </script>
     </head>
