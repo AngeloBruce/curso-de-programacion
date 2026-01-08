@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Piedra, papel o tijera</title>
-        <script>
-            function aleatorio(min, max){
-                return Math.floor(Math.random() * (max - min + 1) + min)
+
+<head>
+    <meta charset="utf-8" />
+    <title>Piedra, papel o tijera</title>
+    <script>
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        function ganar() {
+            alert("ganaste eeee")
+            triunfos++
+        }
+
+        function elección(jugada) {
+            let resultado = ""
+            if (jugada == 1) {
+                resultado = "piedra 🥌"
+            } else if (jugada == 2) {
+                resultado = "papel 🧻"
+            } else if (jugada == 3) {
+                resultado = "tijera ✂"
+            } else {
+                resultado = "MAL ELEGIDO"
             }
-            function eleccion(jugada){
-                let resultado = ""
-                if(jugada == 1 ){
-                    resultado ="piedra 🥌"
-                } else if(jugada == 2 ){
-                    resultado ="papel 🧻"
-                } else if(jugada == 3 ){
-                    resultado ="tijera ✂"
-                } else {
-                    resultado = "MAL ELEGIDO"
-                }
-                return resultado
-            }
-            // 1 es piedra, 2 es papel, 3 es tijera
-            let jugador = 0
-            let pc = aleatorio(1, 3)
+            return resultado
+        }
+        // 1 es piedra, 2 es papel, 3 es tijera
+        let jugador = 0
+        let pc = 0
+        let triunfos = 0
+        let perdidas = 0
+
+        while (triunfos < 3 && perdidas < 3) {
+            pc = aleatorio(1, 3)
             jugador = prompt("elige: 1 para piedra, 2 para papel y 3 para tijera")
             //  alert("Elegiste " + jugador )
 
-            alert("PC elige: " + eleccion(pc))
-            alert("tu eleges: " +eleccion(jugador))
+            alert("PC elige: " + elección(pc))
+            alert("tu eliges: " + elección(jugador))
 
             // combate   
-            if (jugador == pc){
+            if (jugador == pc) {
                 alert("empate")
-            }  else if((jugador == 1 && pc == 3) || (jugador == 3 && pc == 2) || (jugador == 3 && pc == 2)) {
-                alert("ganaste eeee")
-            }   else {
+            } else if (
+                (jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)
+            ) {
+                ganar()
+            } else {
                 alert("perdiste bro")
+                perdidas++
             }
-        </script>
-    </head>
-    <body>
-        <h1>Piedra, papel o tijera</h1>
-    </body>
+        }
+        alert("Ganaste " + triunfos + " veces, perdiste " + perdidas + " veces.")
+    </script>
+</head>
+
+<body>
+    <h1>Piedra, papel o tijera</h1>
+</body>
+
 </html>
